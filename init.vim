@@ -40,6 +40,9 @@ let g:lightline = {}
 let g:lightline.colorscheme = 'neodark'
 let g:neodark#use_256color = 1 " default: 0
 let g:neodark#solid_vertsplit = 1 " default: 0
+let g:airline#extensions#tabline#enabled = 1 "显示buffers
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
 
 " 开启256 支持
 set background=dark
@@ -105,12 +108,14 @@ vmap <Leader>P viw"0p
 
 " buffers
 noremap <Leader>d :bd<CR> " 删除buffer
+noremap <C-n> :bn<CR>
+noremap <C-p> :bp<CR>
+noremap <C-t> :ene<CR>
 
 " tabs
-noremap <C-n> :tabn<CR>
-noremap <C-p> :tabp<CR>
-noremap <C-t> :tabe<CR>
-noremap <C-w> :q<CR>
+"noremap <C-n> :tabn<CR>
+"noremap <C-p> :tabp<CR>
+"noremap <C-t> :tabe<CR>
 
 "关闭高亮时只需要按下 Ctrl+h，当发生下次搜索时又会自动启用。
 nnoremap <c-h> :call DisableHighlight()<cr>
@@ -197,9 +202,8 @@ xmap <leader>a <Plug>(EasyAlign)=<cr>
 let g:indentLine_conceallevel = 0
 
 
-
-
-
+" 插入模式移动光标
+inoremap <C-l> <Right>
 
 
 
